@@ -124,9 +124,32 @@ const loginUser = async (req, res) => {
 /*student login*/
 
 
+/*user profile*/
+
+const userProfile=async(req,res)=>{
+    try {
+        const {id} =req.params
+        const userDetails=await userModel.find({_id:id})
+        
+        if (userDetails) {
+            return res.status(200).json({userDetails})
+            
+        }else{
+            return res.status(400).json({message:'error'})
+
+        }
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
+
 export {
    userSignup,
     loginUser,
     userSingupVerifyOtp,
+    userProfile
 
 };

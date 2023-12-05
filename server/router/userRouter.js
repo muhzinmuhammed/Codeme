@@ -1,5 +1,5 @@
 import express from "express";
-import { userSignup,loginUser,userSingupVerifyOtp } from "../controller/userController.js";
+import { userSignup,loginUser,userSingupVerifyOtp,userProfile } from "../controller/userController.js";
 
 import { protect } from "../middleware/protection.js";
 
@@ -18,6 +18,11 @@ userRouer.post("/login", loginUser);
 /*user login with otp*/
 userRouer.post("/signup_verify", userSingupVerifyOtp);
 /*user login with otp*/
+
+
+//**user profile */
+userRouer.get('/user_details/:id',protect,userProfile)
+//**user profile */
 
 
 
