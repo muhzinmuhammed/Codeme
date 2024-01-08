@@ -1,7 +1,7 @@
 import express from 'express'
 import { adminLogin } from '../controller/adminControler/adminController.js';
 import { blockStudent, unBlockStudent, userView } from '../controller/adminControler/userViewTable.js';
-import { addQuiz } from '../controller/adminControler/quizController.js';
+import { addQuiz, getQuiz } from '../controller/adminControler/quizController.js';
 const adminRouer=express.Router();
  
 
@@ -23,4 +23,8 @@ adminRouer.put('/unblockStudents/:id',unBlockStudent)
 
 adminRouer.post('/add_quiz',addQuiz)
 
+
+/*get quiz*/
+
+adminRouer.get('/get_quiz',getQuiz)
 export default adminRouer

@@ -31,4 +31,27 @@ const addQuiz = async (req, res) => {
 
 /*add quiz*/
 
-export {addQuiz}
+
+/*get quiz*/
+
+const getQuiz=async(req,res)=>{
+    try {
+        const quizes=await quizModel.find().exec()
+        if (quizes) {
+            return res.status(200).json({quizes})
+            
+        }else{
+            return res.status(400).json({message:'No quizes'})
+        }
+        
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({message:'Internal server'})
+
+        
+    }
+}
+
+/*get quiz*/
+
+export {addQuiz,getQuiz}

@@ -43,6 +43,12 @@ const quizSchema = new Schema(
       required: true,
       default: Date.now,
     },
+    isBlocked: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+
   },
   { timestamps: true }
 );

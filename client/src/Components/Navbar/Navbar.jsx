@@ -29,7 +29,7 @@ function NavbarHeader() {
     <Navbar fixed="top" expand="lg" className="header">
       <Container>
         <Navbar.Brand  className="logo" href="/">
-        Skygoal
+        Codme
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
